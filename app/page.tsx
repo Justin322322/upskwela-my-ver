@@ -1,10 +1,10 @@
 'use client';
 
-import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
-import { Hero } from '@/components/hero';
-import { Section } from '@/components/section';
-import ScrollStack, { ScrollStackItem } from '@/components/ScrollStack/ScrollStack';
+import { SiteHeader } from '@/components/layout/site-header';
+import { SiteFooter } from '@/components/layout/site-footer';
+import { Hero } from '@/components/sections/hero';
+import { Section } from '@/components/sections/section';
+import ScrollStack, { ScrollStackItem } from '@/components/animations/ScrollStack/ScrollStack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUsers,
@@ -14,11 +14,11 @@ import {
   faTrophy,
   faCalendarDays,
 } from '@fortawesome/free-solid-svg-icons';
-import { CTA } from '@/components/cta';
-import VariableProximity from '@/components/VariableProximity/VariableProximity';
+import { CTA } from '@/components/sections/cta';
+import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
 import { useRef } from 'react';
-import { MissionVision } from '@/components/mission-vision';
-import Community from '@/components/community';
+import { MissionVision } from '@/components/sections/mission-vision';
+import Community from '@/components/sections/community';
 import { Separator } from '@/components/ui/separator';
 
 export default function Home() {

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +15,13 @@ export function CTA() {
       >
         <div className="relative rotate-[-8deg]">
           <div className="inline-flex items-center rounded-md bg-white px-3 py-1.5 shadow-sm ring-1 ring-sky-200/50">
-            <img src="/logo.svg" alt="Upskwela" className="h-8 w-auto sm:h-10" />
+            <Image
+              src="/logo.svg"
+              alt="Upskwela"
+              width={112}
+              height={30}
+              className="h-8 w-auto sm:h-10"
+            />
           </div>
         </div>
       </div>

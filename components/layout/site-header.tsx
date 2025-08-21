@@ -1,7 +1,7 @@
 'use client';
 
-import SiteNavbar from '@/components/site-navbar';
-import MobileNavbar from '@/components/mobile-navbar';
+import SiteNavbar from '@/components/layout/site-navbar';
+import MobileNavbar from '@/components/layout/mobile-navbar';
 
 export function SiteHeader() {
   return (

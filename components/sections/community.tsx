@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { useRef } from 'react';
-import VariableProximity from '@/components/VariableProximity/VariableProximity';
+import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,

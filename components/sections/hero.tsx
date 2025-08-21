@@ -2,8 +2,8 @@
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import VariableProximity from '@/components/VariableProximity/VariableProximity';
-import { Stats } from '@/components/stats';
+import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
+import { Stats } from '@/components/sections/stats';
 import { motion } from 'motion/react';
 
 export function Hero() {

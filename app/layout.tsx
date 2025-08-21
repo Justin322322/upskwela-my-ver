@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
-import LenisProvider from '@/components/LenisProvider';
-import FontAwesomeSetup from '@/components/FontAwesomeSetup';
+import LenisProvider from '@/components/providers/LenisProvider';
+import FontAwesomeSetup from '@/components/providers/FontAwesomeSetup';
 import { Roboto_Flex, Inter } from 'next/font/google';
-import ScrollToTop from '@/components/ScrollToTop';
+import ScrollToTop from '@/components/animations/ScrollToTop';
 
 const robotoFlex = Roboto_Flex({ subsets: ['latin'], variable: '--font-roboto-flex' });
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
