@@ -9,7 +9,7 @@ type ScrollTransformState = {
   blur: number;
 };
 
-export interface ScrollStackItemProps {
+interface ScrollStackItemProps {
   itemClassName?: string;
   children: ReactNode;
 }
