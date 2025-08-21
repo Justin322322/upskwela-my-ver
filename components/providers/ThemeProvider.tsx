@@ -14,7 +14,7 @@ type ThemeProviderProps = React.PropsWithChildren<{
 export default function ThemeProvider({
   children,
   attribute = 'class',
-  defaultTheme = 'system',
+  defaultTheme = 'light',
   enableSystem = true,
   disableTransitionOnChange = true,
   storageKey = 'upskwela-theme',
