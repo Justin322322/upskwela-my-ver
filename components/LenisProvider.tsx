@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 
-export function LenisProvider({ children }: { children: React.ReactNode }) {
+function LenisProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.1,

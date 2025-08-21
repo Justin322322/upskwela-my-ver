@@ -12,7 +12,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-export function Community() {
+function Community() {
   const headingRef = useRef<HTMLDivElement | null>(null);
   return (
     <div className="mx-auto max-w-6xl text-center">
