@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upskwela - Personal Version
+
+This is my personal version of the [Upskwela](https://www.upskwela.com/) website - a community-based learning platform in the Philippines.
+
+## About Upskwela
+
+Upskwela is a community-powered learning platform that enables creators to build communities, teach courses, and monetize their expertise. The platform features:
+
+- **Community-Based Learning** - Build communities with subscription tiers
+- **Structured Courses** - Create and sell premium content
+- **Creator Monetization** - Earn through subscriptions and course sales
+- **Analytics & Insights** - Track earnings and engagement
+- **Gamified Learning** - XP system, achievements, and leaderboards
+- **Events & Calendar** - Schedule live sessions and workshops
+
+## Project Details
+
+This is a [Next.js](https://nextjs.org) project built with modern web technologies to recreate the Upskwela experience.
 
 ## Getting Started
 
@@ -16,16 +33,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
