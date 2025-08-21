@@ -203,15 +203,15 @@
   pointer-events: none;
   z-index: 0;
   background:
-    linear-gradient(to right, rgba(18, 142, 232, 0.18), rgba(18, 142, 232, 0)) left / 140px 100%
+    linear-gradient(to right, rgba(18, 142, 232, 0.12), rgba(18, 142, 232, 0)) left / 140px 100%
       no-repeat,
-    linear-gradient(to left, rgba(0, 69, 110, 0.18), rgba(0, 69, 110, 0)) right / 140px 100%
+    linear-gradient(to left, rgba(0, 69, 110, 0.12), rgba(0, 69, 110, 0)) right / 140px 100%
       no-repeat;
 }
 .dark .side-gradient-overlay {
   background:
-    linear-gradient(to right, rgba(56, 132, 255, 0.22), rgba(56, 132, 255, 0)) left / 140px 100%
+    linear-gradient(to right, rgba(56, 132, 255, 0), rgba(56, 132, 255, 0)) left / 140px 100%
       no-repeat,
-    linear-gradient(to left, rgba(10, 93, 168, 0.22), rgba(10, 93, 168, 0)) right / 140px 100%
+    linear-gradient(to left, rgba(10, 93, 168, 0), rgba(10, 93, 168, 0)) right / 140px 100%
       no-repeat;
 }

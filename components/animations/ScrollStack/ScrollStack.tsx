@@ -19,7 +19,7 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   itemClassName = '',
 }) => (
   <div
-    className={`scroll-stack-card relative w-full h-64 sm:h-80 my-6 sm:my-8 p-5 sm:p-10 md:p-12 rounded-2xl sm:rounded-[32px] md:rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
+    className={`scroll-stack-card relative w-full h-48 sm:h-64 md:h-80 my-4 sm:my-6 md:my-8 p-4 sm:p-5 md:p-10 lg:p-12 rounded-xl sm:rounded-2xl md:rounded-[32px] lg:rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
     style={{
       backfaceVisibility: 'hidden',
       transformStyle: 'preserve-3d',
@@ -241,12 +241,12 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         transform: 'translateZ(0)',
       }}
     >
-      <div className="scroll-stack-inner pt-16 sm:pt-[20vh] px-4 sm:px-8 lg:px-20 min-h-screen">
+      <div className="scroll-stack-inner pt-8 sm:pt-16 md:pt-[20vh] px-3 sm:px-4 md:px-8 lg:px-20 min-h-screen">
         {children}
         {/* End marker; height will be extended by bottom spacer below */}
         <div className="scroll-stack-end w-full h-px" />
         {/* Dynamic bottom spacer based on viewport height */}
-        <div aria-hidden="true" className="h-[30vh] sm:h-[40vh] lg:h-[50vh]" />
+        <div aria-hidden="true" className="h-[20vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh]" />
       </div>
     </div>
   );

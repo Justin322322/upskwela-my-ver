@@ -33,10 +33,10 @@ function Community() {
         Connect with us on social media for updates, tips, and community highlights
       </p>
 
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5">
+      <div className="mt-8 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center gap-3 sm:gap-4 md:gap-5 max-w-2xl sm:max-w-none mx-auto">
         <Button
           variant="brandOutline"
-          className="group rounded-full h-12 min-w-[160px] px-5 sm:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-start md:justify-center"
+          className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -49,7 +49,7 @@ function Community() {
         </Button>
         <Button
           variant="brandOutline"
-          className="group rounded-full h-12 min-w-[160px] px-5 sm:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-start md:justify-center"
+          className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -62,7 +62,7 @@ function Community() {
         </Button>
         <Button
           variant="brandOutline"
-          className="group rounded-full h-12 min-w-[160px] px-5 sm:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-start md:justify-center"
+          className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
           <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
@@ -75,7 +75,7 @@ function Community() {
         </Button>
         <Button
           variant="brandOutline"
-          className="group rounded-full h-12 min-w-[160px] px-5 sm:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-start md:justify-center"
+          className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
@@ -88,7 +88,7 @@ function Community() {
         </Button>
         <Button
           variant="brandOutline"
-          className="group rounded-full h-12 min-w-[160px] px-5 sm:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-start md:justify-center"
+          className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base col-span-2 sm:col-span-1"
           asChild
         >
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">

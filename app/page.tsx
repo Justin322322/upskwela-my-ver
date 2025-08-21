@@ -11,8 +11,8 @@ import {
   faGraduationCap,
   faWallet,
   faChartBar,
-  faTrophy,
   faCalendarDays,
+  faGamepad,
 } from '@fortawesome/free-solid-svg-icons';
 import { CTA } from '@/components/sections/cta';
 import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
@@ -66,128 +66,132 @@ export default function Home() {
             scaleEndPosition="12%"
           >
             <ScrollStackItem itemClassName="relative overflow-hidden border border-border/60 bg-card/70 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)]">
-              <div className="pointer-events-none absolute -bottom-10 -right-10 z-0">
+              <div className="pointer-events-none absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 z-0">
                 <div
-                  className="absolute inset-0 translate-x-8 translate-y-8 w-64 h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-2xl"
+                  className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-xl sm:blur-2xl"
                   aria-hidden="true"
                 />
                 <FontAwesomeIcon
                   icon={faUsers}
-                  className="text-[10rem] sm:text-[12rem] md:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
+                  className="text-[6rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
                   aria-hidden="true"
                 />
               </div>
-              <div className="relative z-10 pr-20 sm:pr-28 md:pr-40">
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
                   Community-Based Learning
                 </h2>
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Build your own community, set subscription tiers, and earn revenue while helping
                   others learn and grow together.
                 </p>
               </div>
             </ScrollStackItem>
             <ScrollStackItem itemClassName="relative overflow-hidden border border-border/60 bg-card/70 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)]">
-              <div className="pointer-events-none absolute -bottom-10 -right-10 z-0">
+              <div className="pointer-events-none absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 z-0">
                 <div
-                  className="absolute inset-0 translate-x-8 translate-y-8 w-64 h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-2xl"
+                  className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-xl sm:blur-2xl"
                   aria-hidden="true"
                 />
                 <FontAwesomeIcon
                   icon={faGraduationCap}
-                  className="text-[10rem] sm:text-[12rem] md:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
+                  className="text-[6rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
                   aria-hidden="true"
                 />
               </div>
-              <div className="relative z-10 pr-20 sm:pr-28 md:pr-40">
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
                   Structured Courses
                 </h2>
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Create and sell courses with premium content. Set your prices, track enrollments,
                   and manage your revenue streams.
                 </p>
               </div>
             </ScrollStackItem>
             <ScrollStackItem itemClassName="relative overflow-hidden border border-border/60 bg-card/70 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)]">
-              <div className="pointer-events-none absolute -bottom-10 -right-10 z-0">
+              <div className="pointer-events-none absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 z-0">
                 <div
-                  className="absolute inset-0 translate-x-8 translate-y-8 w-64 h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-2xl"
+                  className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-xl sm:blur-2xl"
                   aria-hidden="true"
                 />
                 <FontAwesomeIcon
                   icon={faWallet}
-                  className="text-[10rem] sm:text-[12rem] md:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
+                  className="text-[6rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
                   aria-hidden="true"
                 />
               </div>
-              <div className="relative z-10 pr-20 sm:pr-28 md:pr-40">
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
                   Creator Monetization
                 </h2>
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Earn revenue through subscriptions, course sales, and exclusive content. Get paid
                   directly with transparent revenue sharing.
                 </p>
               </div>
             </ScrollStackItem>
             <ScrollStackItem itemClassName="relative overflow-hidden border border-border/60 bg-card/70 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)]">
-              <div className="pointer-events-none absolute -bottom-10 -right-10 z-0">
+              <div className="pointer-events-none absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 z-0">
                 <div
-                  className="absolute inset-0 translate-x-8 translate-y-8 w-64 h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-2xl"
+                  className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-xl sm:blur-2xl"
                   aria-hidden="true"
                 />
                 <FontAwesomeIcon
                   icon={faChartBar}
-                  className="text-[10rem] sm:text-[12rem] md:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
+                  className="text-[6rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
                   aria-hidden="true"
                 />
               </div>
-              <div className="relative z-10 pr-20 sm:pr-28 md:pr-40">
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
                   Analytics & Insights
                 </h2>
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Track your earnings, monitor engagement, and optimize your content strategy with
                   comprehensive analytics.
                 </p>
               </div>
             </ScrollStackItem>
             <ScrollStackItem itemClassName="relative overflow-hidden border border-border/60 bg-card/70 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)]">
-              <div className="pointer-events-none absolute -bottom-10 -right-10 z-0">
+              <div className="pointer-events-none absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 z-0">
                 <div
-                  className="absolute inset-0 translate-x-8 translate-y-8 w-64 h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-2xl"
+                  className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-xl sm:blur-2xl"
                   aria-hidden="true"
                 />
                 <FontAwesomeIcon
-                  icon={faTrophy}
-                  className="text-[10rem] sm:text-[12rem] md:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
+                  icon={faGamepad}
+                  className="text-[6rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
                   aria-hidden="true"
                 />
               </div>
-              <div className="relative z-10 pr-20 sm:pr-28 md:pr-40">
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Gamified Learning</h2>
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
+              <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+                  Gamified Learning
+                </h2>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Earn XP, unlock achievements, and climb leaderboards. Make learning addictive with
                   badges, rewards, and recognition systems.
                 </p>
               </div>
             </ScrollStackItem>
             <ScrollStackItem itemClassName="relative overflow-hidden border border-border/60 bg-card/70 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)]">
-              <div className="pointer-events-none absolute -bottom-10 -right-10 z-0">
+              <div className="pointer-events-none absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 z-0">
                 <div
-                  className="absolute inset-0 translate-x-8 translate-y-8 w-64 h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-2xl"
+                  className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#128EE8]/25 to-[#00456E]/25 blur-xl sm:blur-2xl"
                   aria-hidden="true"
                 />
                 <FontAwesomeIcon
                   icon={faCalendarDays}
-                  className="text-[10rem] sm:text-[12rem] md:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
+                  className="text-[6rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] text-[#128EE8]/30 dark:text-[#128EE8]/20"
                   aria-hidden="true"
                 />
               </div>
-              <div className="relative z-10 pr-20 sm:pr-28 md:pr-40">
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Events & Calendar</h2>
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
+              <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+                  Events & Calendar
+                </h2>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Schedule live sessions, workshops, and community events. Integrated calendar keeps
                   everyone synchronized and engaged.
                 </p>

@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import LenisProvider from '@/components/providers/LenisProvider';
 import FontAwesomeSetup from '@/components/providers/FontAwesomeSetup';
+import ThemeProvider from '@/components/providers/ThemeProvider';
 import { Roboto_Flex, Inter } from 'next/font/google';
 import ScrollToTop from '@/components/animations/ScrollToTop';
 
@@ -23,16 +24,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${robotoFlex.variable} scroll-smooth`}>
+    <html lang="en" className={`${robotoFlex.variable} scroll-smooth`} suppressHydrationWarning>
       <head />
       <body
         className={`${inter.className} min-h-dvh bg-gradient-to-b from-sky-50 via-blue-50 to-white dark:from-sky-900/10 dark:via-sky-950/10 dark:to-[var(--background)]`}
       >
-        <div className="side-gradient-overlay" aria-hidden="true" />
-        <FontAwesomeSetup />
-        <LenisProvider>{children}</LenisProvider>
-        <ScrollToTop />
-        <Toaster richColors />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="side-gradient-overlay" aria-hidden="true" />
+          <FontAwesomeSetup />
+          <LenisProvider>{children}</LenisProvider>
+          <ScrollToTop />
+          <Toaster richColors />
+        </ThemeProvider>
       </body>
     </html>
   );

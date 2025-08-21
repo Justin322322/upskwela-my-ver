@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faRoute, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import ThemeToggle from '@/components/ui/theme-toggle';
 
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,99 +18,98 @@ export default function MobileNavbar() {
 
   return (
     <div className="md:hidden w-full">
-      <nav className="relative rounded-full border border-sky-200/60 bg-gradient-to-r from-sky-300 via-white to-blue-300 dark:from-blue-800 dark:via-slate-900 dark:to-blue-800 backdrop-blur supports-[backdrop-filter]:from-sky-200/90 supports-[backdrop-filter]:via-white/90 supports-[backdrop-filter]:to-blue-200/90 flex items-center justify-between gap-4 px-4 py-2">
+      <nav className="relative rounded-full border border-sky-200/40 bg-white/60 dark:bg-slate-800/40 backdrop-blur supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-slate-800/30 flex items-center justify-between gap-4 px-4 py-2 shadow-[0_12px_30px_-12px_rgba(0,69,110,0.15),0_2px_8px_-2px_rgba(0,69,110,0.08)] dark:shadow-[0_12px_30px_-12px_rgba(15,23,42,0.3),0_2px_8px_-2px_rgba(15,23,42,0.2)]">
         <Link href="/" className="inline-flex items-center gap-2">
           <Image src="/logo.svg" width={112} height={30} alt="Upskwela" priority />
           <span className="sr-only">Upskwela</span>
         </Link>
 
-        <div className="relative">
+        <div className="flex items-center gap-1 relative">
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
             aria-label="Open menu"
             onClick={() => setIsOpen(!isOpen)}
+            className="relative overflow-hidden text-slate-700/80 hover:text-sky-700 hover:bg-sky-100/30 dark:text-slate-300/80 dark:hover:text-sky-200 dark:hover:bg-slate-700/30"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <div className="relative w-5 h-5">
+              <Menu
+                className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${isOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100 rotate-0 scale-100'}`}
+              />
+              <X
+                className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'}`}
+              />
+            </div>
           </Button>
 
           {isOpen && (
-            <div className="absolute top-full right-0 mt-2 w-56 bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-sky-200/60 py-2 z-50 animate-in slide-in-from-top-2 fade-in-0 duration-200">
+            <div className="absolute top-full right-0 mt-2 w-44 rounded-xl border border-sky-200/40 bg-white backdrop-blur shadow-lg dark:bg-slate-800 dark:border-slate-600/40 p-1 z-50 animate-in slide-in-from-top-2 fade-in-0 duration-150">
               <nav className="space-y-1">
-                <Link
+                <MenuItem
+                  icon={<FontAwesomeIcon icon={faHome} className="w-4 h-4" />}
+                  label="Home"
+                  active={isActive('/')}
                   href="/"
-                  className={`block px-4 py-3 text-[#00456E] rounded-lg transition-all duration-300 mx-2 ${
-                    isActive('/')
-                      ? 'bg-[#0a5f8e]/8 text-[#00456E] font-semibold'
-                      : 'hover:bg-[#0a5f8e]/5 hover:text-[#0a5f8e]'
-                  } ${isActive('/') ? 'text-lg' : 'text-base'}`}
                   onClick={() => setIsOpen(false)}
-                >
-                  <span className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faHome} className="w-4 h-4" />
-                    <span>Home</span>
-                    {isActive('/') && (
-                      <span className="ml-auto w-2 h-2 bg-[#0a5f8e] rounded-full"></span>
-                    )}
-                  </span>
-                </Link>
-                <Link
+                />
+                <MenuItem
+                  icon={<FontAwesomeIcon icon={faRoute} className="w-4 h-4" />}
+                  label="Roadmap"
+                  active={isActive('/roadmap')}
                   href="/roadmap"
-                  className={`block px-4 py-3 text-[#00456E] rounded-lg transition-all duration-300 mx-2 ${
-                    isActive('/roadmap')
-                      ? 'bg-[#0a5f8e]/8 text-[#00456E] font-medium'
-                      : 'hover:bg-[#0a5f8e]/5 hover:text-[#00456E]'
-                  }`}
                   onClick={() => setIsOpen(false)}
-                >
-                  <span className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faRoute} className="w-4 h-4" />
-                    <span>Roadmap</span>
-                    {isActive('/roadmap') && (
-                      <span className="ml-auto w-2 h-2 bg-[#0a5f8e] rounded-full"></span>
-                    )}
-                  </span>
-                </Link>
-                <div className="h-px bg-sky-200/60 my-2 mx-2" />
-                <Link
+                />
+                <div className="h-px bg-slate-200/40 dark:bg-slate-600/40 my-2 mx-2" />
+                <MenuItem
+                  icon={<FontAwesomeIcon icon={faSignInAlt} className="w-4 h-4" />}
+                  label="Login"
+                  active={isActive('/login')}
                   href="/login"
-                  className={`block px-4 py-3 text-[#00456E] rounded-lg transition-all duration-300 mx-2 ${
-                    isActive('/login')
-                      ? 'bg-[#0a5f8e]/8 text-[#00456E] font-medium'
-                      : 'hover:bg-[#0a5f8e]/5 hover:text-[#00456E]'
-                  }`}
                   onClick={() => setIsOpen(false)}
-                >
-                  <span className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faSignInAlt} className="w-4 h-4" />
-                    <span>Login</span>
-                    {isActive('/login') && (
-                      <span className="ml-auto w-2 h-2 bg-[#0a5f8e] rounded-full"></span>
-                    )}
-                  </span>
-                </Link>
-                <Link
+                />
+                <MenuItem
+                  icon={<FontAwesomeIcon icon={faUserPlus} className="w-4 h-4" />}
+                  label="Sign up"
+                  active={isActive('/signup')}
                   href="/signup"
-                  className={`block px-4 py-3 text-[#00456E] rounded-lg transition-all duration-300 mx-2 ${
-                    isActive('/signup')
-                      ? 'bg-[#0a5f8e]/8 text-[#00456E] font-medium'
-                      : 'hover:bg-[#0a5f8e]/5 hover:text-[#00456E]'
-                  }`}
                   onClick={() => setIsOpen(false)}
-                >
-                  <span className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faUserPlus} className="w-4 h-4" />
-                    <span>Sign up</span>
-                    {isActive('/signup') && (
-                      <span className="ml-auto w-2 h-2 bg-[#0a5f8e] rounded-full"></span>
-                    )}
-                  </span>
-                </Link>
+                />
               </nav>
             </div>
           )}
         </div>
       </nav>
     </div>
+  );
+}
+
+function MenuItem({
+  icon,
+  label,
+  active,
+  href,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  active?: boolean;
+  href: string;
+  onClick: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`w-full flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-all duration-200 ${
+        active
+          ? 'bg-slate-100 text-slate-900 dark:bg-slate-700/50 dark:text-sky-200'
+          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700/30 dark:hover:text-sky-200'
+      }`}
+    >
+      {icon}
+      <span className="flex-1 text-left">{label}</span>
+      {active && <span className="ml-auto h-2 w-2 rounded-full bg-slate-600 dark:bg-sky-300" />}
+    </Link>
   );
 }
