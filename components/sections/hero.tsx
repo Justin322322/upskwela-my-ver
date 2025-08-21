@@ -10,7 +10,7 @@ export function Hero() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   return (
     <div className="pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <motion.div
           className="mb-6 flex items-center justify-center"
           initial={{ opacity: 0, y: 8 }}
@@ -31,7 +31,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.12 }}
         >
-          <motion.h1 className="text-balance text-6xl font-extrabold tracking-tight sm:text-7xl lg:text-8xl">
+          <motion.h1 className="text-balance text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
             <VariableProximity
               label={'Learn, Connect, and Elevate!'}
               className={'variable-proximity-demo'}
@@ -44,7 +44,7 @@ export function Hero() {
           </motion.h1>
         </motion.div>
         <motion.p
-          className="mt-4 text-balance text-base text-muted-foreground sm:text-lg"
+          className="mt-5 text-balance text-base text-muted-foreground sm:text-lg max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut', delay: 0.2 }}

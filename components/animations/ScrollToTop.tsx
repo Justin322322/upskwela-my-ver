@@ -23,8 +23,8 @@ export default function ScrollToTop() {
 
   return (
     <div
-      aria-hidden={!visible}
       className={`fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 transition-opacity duration-300 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      inert={!visible || undefined}
     >
       <Button
         aria-label="Scroll to top"

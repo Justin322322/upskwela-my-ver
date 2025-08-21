@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link, { type LinkProps } from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // Removed unused MenuItem/ProductItem components and animations
 
@@ -26,14 +27,28 @@ type HoveredLinkProps = React.PropsWithChildren<
 >;
 
 export const HoveredLink: React.FC<HoveredLinkProps> = ({ children, href, ...rest }) => {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+  const isHome = href === '/';
+
   return (
     <Link
       href={href}
       {...rest}
-      className="group relative inline-flex items-center text-[#00456E]/80 hover:text-[#00456E] transition-colors duration-200 px-1 py-1 rounded-md"
+      className={`group relative inline-flex items-center transition-all duration-300 px-3 py-2 rounded-lg font-medium ${
+        isActive ? 'text-[#00456E] bg-[#0a5f8e]/8' : 'text-[#00456E]/70 hover:text-[#00456E]'
+      } ${
+        isHome
+          ? 'text-lg font-semibold hover:text-[#0a5f8e] hover:scale-105'
+          : 'text-base hover:text-[#00456E]'
+      }`}
     >
       <span className="relative z-10">{children}</span>
-      <span className="pointer-events-none absolute inset-x-1 -bottom-0.5 h-1 rounded-full bg-[#0a5f8e]/20 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
+
+      {/* Subtle background glow on hover for home */}
+      {isHome && (
+        <span className="pointer-events-none absolute inset-0 rounded-lg transition-all duration-300 bg-gradient-to-r from-[#0a5f8e]/8 to-[#0a5f8e]/12 opacity-0 group-hover:opacity-100" />
+      )}
     </Link>
   );
 };

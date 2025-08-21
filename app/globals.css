@@ -180,6 +180,16 @@
 }
 /* removed shimmer */
 
+/* Responsive badge sizing */
+@media (min-width: 640px) {
+  .ph-badge {
+    border-width: 5px; /* even larger border on larger screens */
+  }
+  .ph-badge__inner {
+    padding: 0.625rem 1.25rem; /* larger padding on larger screens: ~px-5 py-2.5 */
+  }
+}
+
 @keyframes rotate-flag {
   to {
     transform: rotate(360deg);
