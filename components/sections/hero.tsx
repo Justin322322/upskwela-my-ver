@@ -1,15 +1,14 @@
 'use client';
 import { useRef } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
 import { Stats } from '@/components/sections/stats';
 import { motion } from 'motion/react';
-import { useScrollToTop } from '@/lib/hooks/useScrollToTop';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const { navigateWithScrollToTop } = useScrollToTop();
 
   return (
     <div className="pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
@@ -73,8 +72,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut', delay: 0.36 }}
         >
-          <Button variant="brand" onClick={() => navigateWithScrollToTop('/roadmap')}>
-            View Roadmap
+          <Button variant="brand" asChild>
+            <Link href="/roadmap">View Roadmap</Link>
           </Button>
           <Button variant="brandOutline" asChild>
             <a href="#features">Explore Features</a>

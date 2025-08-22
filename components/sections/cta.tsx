@@ -1,15 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
-import { useScrollToTop } from '@/lib/hooks/useScrollToTop';
 
 export function CTA() {
-  const { navigateWithScrollToTop } = useScrollToTop();
-
   return (
     <div className="relative">
       <div
@@ -49,8 +47,8 @@ export function CTA() {
         </CardHeader>
         <CardContent className="relative z-10">
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button variant="brand" onClick={() => navigateWithScrollToTop('/roadmap')}>
-              View Roadmap
+            <Button variant="brand" asChild>
+              <Link href="/roadmap">View Roadmap</Link>
             </Button>
             <Button
               variant="brandOutline"
