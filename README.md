@@ -1,4 +1,4 @@
-# Upskwela - Personal Version
+# <img width="1362" height="358" alt="image" src="https://github.com/user-attachments/assets/47ce59b1-f8cc-489f-b79c-56cb698b47f2" /> Upskwela- Personal Version
 
 This is my personal version of the [Upskwela](https://www.upskwela.com/) website - a community-based learning platform in the Philippines.
 
