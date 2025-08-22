@@ -238,10 +238,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          {/* Simple centered card */}
-          <div className="rounded-lg px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-gray-200/50 dark:border-gray-700/50 dark:shadow-2xl dark:shadow-black/20">
-            <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 border-2 border-blue-600 bg-white dark:bg-gray-900 rounded-full flex-shrink-0" />
-            <span className="text-blue-800 dark:text-blue-200 font-medium text-xs sm:text-sm md:text-base lg:text-lg">
+          {/* Enhanced mobile-responsive card */}
+          <div className="rounded-xl px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 flex items-center gap-3 sm:gap-4 md:gap-5 shadow-lg backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 border-2 border-blue-200/50 dark:border-blue-700/50 dark:shadow-2xl dark:shadow-black/20">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 border-2 border-blue-600 bg-white dark:bg-gray-900 rounded-full flex-shrink-0 flex items-center justify-center">
+              <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-blue-600 rounded-full" />
+            </div>
+            <span className="text-blue-800 dark:text-blue-200 font-semibold text-base sm:text-lg md:text-xl lg:text-2xl">
               More exciting features coming soon!
             </span>
           </div>
