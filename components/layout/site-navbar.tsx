@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HoveredLink, Menu } from '@/components/ui/navbar-menu';
 import ThemeToggle from '@/components/ui/theme-toggle';
-
 export default function SiteNavbar() {
   const [, setActive] = useState<string | null>(null);
   return (

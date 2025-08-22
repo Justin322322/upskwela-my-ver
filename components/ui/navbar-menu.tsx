@@ -30,9 +30,17 @@ export const HoveredLink: React.FC<HoveredLinkProps> = ({ children, href, ...res
   const pathname = usePathname();
   const isActive = pathname === href;
 
+  const handleClick = () => {
+    // Only scroll to top if navigating to a different page
+    if (pathname !== href) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <Link
       href={href}
+      onClick={handleClick}
       {...rest}
       className={`group relative inline-flex items-center transition-all duration-300 px-3 py-2 rounded-lg font-medium text-base ${
         isActive

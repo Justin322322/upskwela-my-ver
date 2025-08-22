@@ -105,10 +105,20 @@ function MenuItem({
   href: string;
   onClick: () => void;
 }) {
+  const pathname = usePathname();
+
+  const handleClick = () => {
+    // Only scroll to top if navigating to a different page
+    if (pathname !== href) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    onClick();
+  };
+
   return (
     <Link
       href={href}
-      onClick={onClick}
+      onClick={handleClick}
       className={`w-full flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-all duration-200 ${
         active
           ? 'bg-slate-100 text-slate-900 dark:bg-slate-700/50 dark:text-sky-200'

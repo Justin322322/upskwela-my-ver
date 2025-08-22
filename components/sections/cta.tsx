@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
+import { useScrollToTop } from '@/lib/hooks/useScrollToTop';
 
 export function CTA() {
+  const { navigateWithScrollToTop } = useScrollToTop();
+
   return (
     <div className="relative">
       <div
@@ -46,8 +49,8 @@ export function CTA() {
         </CardHeader>
         <CardContent className="relative z-10">
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button variant="brand" asChild>
-              <a href="#roadmap">View Roadmap</a>
+            <Button variant="brand" onClick={() => navigateWithScrollToTop('/roadmap')}>
+              View Roadmap
             </Button>
             <Button
               variant="brandOutline"
