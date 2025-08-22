@@ -79,7 +79,15 @@ export default function Home() {
               </div>
               <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                  Community-Based Learning
+                  <VariableProximity
+                    label="Community-Based Learning"
+                    className="variable-proximity-demo"
+                    fromFontVariationSettings="'wght' 400, 'wdth' 100"
+                    toFontVariationSettings="'wght' 900, 'wdth' 150"
+                    containerRef={headingRef}
+                    radius={80}
+                    falloff="exponential"
+                  />
                 </h2>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Build your own community, set subscription tiers, and earn revenue while helping
@@ -101,7 +109,15 @@ export default function Home() {
               </div>
               <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                  Structured Courses
+                  <VariableProximity
+                    label="Structured Courses"
+                    className="variable-proximity-demo"
+                    fromFontVariationSettings="'wght' 400, 'wdth' 100"
+                    toFontVariationSettings="'wght' 900, 'wdth' 150"
+                    containerRef={headingRef}
+                    radius={80}
+                    falloff="exponential"
+                  />
                 </h2>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Create and sell courses with premium content. Set your prices, track enrollments,
@@ -123,7 +139,15 @@ export default function Home() {
               </div>
               <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                  Creator Monetization
+                  <VariableProximity
+                    label="Creator Monetization"
+                    className="variable-proximity-demo"
+                    fromFontVariationSettings="'wght' 400, 'wdth' 100"
+                    toFontVariationSettings="'wght' 900, 'wdth' 150"
+                    containerRef={headingRef}
+                    radius={80}
+                    falloff="exponential"
+                  />
                 </h2>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Earn revenue through subscriptions, course sales, and exclusive content. Get paid
@@ -145,7 +169,15 @@ export default function Home() {
               </div>
               <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                  Analytics & Insights
+                  <VariableProximity
+                    label="Analytics & Insights"
+                    className="variable-proximity-demo"
+                    fromFontVariationSettings="'wght' 400, 'wdth' 100"
+                    toFontVariationSettings="'wght' 900, 'wdth' 150"
+                    containerRef={headingRef}
+                    radius={80}
+                    falloff="exponential"
+                  />
                 </h2>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Track your earnings, monitor engagement, and optimize your content strategy with
@@ -167,7 +199,15 @@ export default function Home() {
               </div>
               <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                  Gamified Learning
+                  <VariableProximity
+                    label="Gamified Learning"
+                    className="variable-proximity-demo"
+                    fromFontVariationSettings="'wght' 400, 'wdth' 100"
+                    toFontVariationSettings="'wght' 900, 'wdth' 150"
+                    containerRef={headingRef}
+                    radius={80}
+                    falloff="exponential"
+                  />
                 </h2>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Earn XP, unlock achievements, and climb leaderboards. Make learning addictive with
@@ -189,7 +229,15 @@ export default function Home() {
               </div>
               <div className="relative z-10 pr-16 sm:pr-20 md:pr-28 lg:pr-40">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                  Events & Calendar
+                  <VariableProximity
+                    label="Events & Calendar"
+                    className="variable-proximity-demo"
+                    fromFontVariationSettings="'wght' 400, 'wdth' 100"
+                    toFontVariationSettings="'wght' 900, 'wdth' 150"
+                    containerRef={headingRef}
+                    radius={80}
+                    falloff="exponential"
+                  />
                 </h2>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
                   Schedule live sessions, workshops, and community events. Integrated calendar keeps
