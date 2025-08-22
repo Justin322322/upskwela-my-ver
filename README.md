@@ -13,6 +13,14 @@ Upskwela is a community-powered learning platform that enables creators to build
 - **Gamified Learning** - XP system, achievements, and leaderboards
 - **Events & Calendar** - Schedule live sessions and workshops
 
+| Desktop | Mobile |
+|------|--------|
+| <img src="https://github.com/user-attachments/assets/b00a2414-5a37-4d9e-ac4d-40a9f7ef568d" height="300"/> | <img src="https://github.com/user-attachments/assets/218b037b-0b1b-4196-92ef-abe87b2b4c03" height="300"/> |
+
+
+
+
+
 ## Project Details
 
 This is a [Next.js](https://nextjs.org) project built with modern web technologies to recreate the Upskwela experience.
