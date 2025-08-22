@@ -21,9 +21,7 @@ export default function SiteNavbar() {
           />
           <span className="sr-only">Upskwela</span>
         </Link>
-        <span className="text-xs text-slate-700 dark:text-slate-300">
-          🇵🇭 Proudly Filipino-founded
-        </span>
+        <span className="text-xs text-slate-700 dark:text-slate-300">Proudly Filipino-founded</span>
       </div>
       <div
         className="h-6 w-px bg-slate-300/40 dark:bg-slate-600/40 mx-2 md:mx-4"
