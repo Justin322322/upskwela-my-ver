@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -73,6 +73,14 @@ export default function MobileNavbar() {
                   label="Sign up"
                   active={isActive('/signup')}
                   href="/signup"
+                  onClick={() => setIsOpen(false)}
+                />
+                <div className="h-px bg-slate-200/40 dark:bg-slate-600/40 my-2 mx-2" />
+                <MenuItem
+                  icon={<Github className="w-4 h-4" />}
+                  label="GitHub"
+                  active={false}
+                  href="https://github.com/Justin322322/upskwela-my-ver"
                   onClick={() => setIsOpen(false)}
                 />
               </nav>
