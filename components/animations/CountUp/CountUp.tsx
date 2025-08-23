@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { useInView, useMotionValue, useSpring } from 'motion/react';
+import { useInView, useMotionValue, useSpring } from 'framer-motion';
 
 interface CountUpProps {
   to: number;
@@ -87,7 +87,7 @@ export default function CountUp({
   }, [isInView, startWhen, motionValue, direction, from, to, delay, onStart, onEnd, duration]);
 
   useEffect(() => {
-    const unsubscribe = springValue.on('change', (latest) => {
+    const unsubscribe = springValue.on('change', (latest: number) => {
       if (ref.current) {
         const hasDecimals = maxDecimals > 0;
 

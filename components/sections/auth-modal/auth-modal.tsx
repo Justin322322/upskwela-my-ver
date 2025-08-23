@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components';
 import { LoginForm } from './login-form';
 import { SignupForm } from './signup-form';
 import { ForgotPasswordForm } from './forgot-password-form';

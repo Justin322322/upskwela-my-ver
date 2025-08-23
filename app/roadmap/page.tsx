@@ -1,13 +1,9 @@
 'use client';
 
-import { SiteHeader } from '@/components/layout/site-header';
-import { SiteFooter } from '@/components/layout/site-footer';
-import { Section } from '@/components/sections/section';
+import { SiteHeader, SiteFooter, Section, VariableProximity, Timeline } from '@/components';
 import { useRef } from 'react';
-import { motion } from 'motion/react';
-import { VariableProximity } from '@/components/animations';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Timeline } from '@/components/ui/timeline';
 
 const roadmapData = [
   {

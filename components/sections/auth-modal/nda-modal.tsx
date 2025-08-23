@@ -1,7 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Button, Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components';
 import { Printer, Download, X, Check } from 'lucide-react';
 
 interface NDAModalProps {

@@ -30,6 +30,15 @@ if [ $? -ne 0 ]; then
 fi
 echo "Code formatting is correct"
 
+# Run Knip file analysis to check for unused files
+echo "Checking for unused files with Knip..."
+npx knip --include files
+if [ $? -ne 0 ]; then
+  echo "Knip found unused files. Please clean them up before committing."
+  exit 1
+fi
+echo "No unused files found"
+
 # Run lint-staged for staged files
 echo "Running lint-staged on staged files..."
 npx --no-install lint-staged

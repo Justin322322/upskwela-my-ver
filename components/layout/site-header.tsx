@@ -1,8 +1,6 @@
 'use client';
 
-import SiteNavbar from '@/components/layout/site-navbar';
-import MobileNavbar from '@/components/layout/mobile-navbar';
-import { GitHubButton } from '@/components/ui/github-button';
+import { SiteNavbar, MobileNavbar, GitHubButton } from '@/components';
 
 export function SiteHeader() {
   return (

@@ -2,9 +2,7 @@
 
 import { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Button, Input, Label } from '@/components';
 
 import { AuthErrors } from './types';
 

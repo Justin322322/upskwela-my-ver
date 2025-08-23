@@ -1,6 +1,6 @@
 'use client';
-import { CountUp } from '@/components/animations';
-import { cn } from '@/lib/utils';
+import { CountUp } from '@/components';
+import { cn } from '@/lib';
 
 type Stat = {
   label: string;

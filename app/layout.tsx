@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { Toaster } from '@/components/ui/sonner';
-import FontAwesomeSetup from '@/components/providers/FontAwesomeSetup';
-import ThemeProvider from '@/components/providers/ThemeProvider';
+import { Toaster, FontAwesomeSetup, ThemeProvider, ScrollToTop } from '@/components';
 import { Roboto_Flex, Inter } from 'next/font/google';
-import { ScrollToTop } from '@/components/animations';
 
 const robotoFlex = Roboto_Flex({ subsets: ['latin'], variable: '--font-roboto-flex' });
 const inter = Inter({ subsets: ['latin'], display: 'swap' });

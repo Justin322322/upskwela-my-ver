@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components';
 import { Github } from 'lucide-react';
 
 interface GitHubButtonProps {

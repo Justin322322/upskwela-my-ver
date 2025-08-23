@@ -9,6 +9,5 @@ export { Separator } from './separator';
 export { Toaster } from './sonner';
 export { default as ThemeToggle } from './theme-toggle';
 export { Timeline } from './timeline';
-
-export { HoveredLink, Menu as NavbarMenu } from './navbar-menu';
+export { HoveredLink, Menu } from './navbar-menu';
 export { GitHubButton } from './github-button';

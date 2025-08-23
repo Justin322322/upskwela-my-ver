@@ -9,7 +9,7 @@ import {
   CSSProperties,
   HTMLAttributes,
 } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 function useAnimationFrame(callback: () => void) {
   useEffect(() => {
@@ -185,7 +185,7 @@ const VariableProximity = forwardRef<HTMLSpanElement, VariableProximityProps>((p
             return (
               <motion.span
                 key={currentLetterIndex}
-                ref={(el) => {
+                ref={(el: HTMLElement | null) => {
                   letterRefs.current[currentLetterIndex] = el;
                 }}
                 style={{

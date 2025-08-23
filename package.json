@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit --project tsconfig.json",
-    "quality-check": "npm run type-check && npm run lint:strict && npm run format:check",
+    "knip:files": "npx knip --include files",
+    "quality-check": "npm run type-check && npm run lint:strict && npm run format:check && npm run knip:files",
     "quality-fix": "npm run lint:fix && npm run format",
     "prepare": "husky"
   },
@@ -29,7 +30,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.540.0",
-    "motion": "^12.23.12",
     "next": "15.5.0",
     "next-themes": "^0.4.6",
     "react": "19.1.0",

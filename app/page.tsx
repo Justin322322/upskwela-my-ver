@@ -1,10 +1,18 @@
 'use client';
 
-import { SiteHeader } from '@/components/layout/site-header';
-import { SiteFooter } from '@/components/layout/site-footer';
-import { Hero } from '@/components/sections/hero';
-import { Section } from '@/components/sections/section';
-import { ScrollStack, ScrollStackItem } from '@/components/animations';
+import {
+  SiteHeader,
+  SiteFooter,
+  Hero,
+  Section,
+  ScrollStack,
+  ScrollStackItem,
+  CTA,
+  VariableProximity,
+  MissionVision,
+  Community,
+  Separator,
+} from '@/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUsers,
@@ -14,12 +22,7 @@ import {
   faCalendarDays,
   faGamepad,
 } from '@fortawesome/free-solid-svg-icons';
-import { CTA } from '@/components/sections/cta';
-import { VariableProximity } from '@/components/animations';
 import { useRef } from 'react';
-import { MissionVision } from '@/components/sections/mission-vision';
-import { Community } from '@/components/sections/community';
-import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const headingRef = useRef<HTMLDivElement | null>(null);

@@ -1,17 +1,17 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components';
 import { useRef } from 'react';
-import { VariableProximity } from '@/components/animations';
+import { VariableProximity } from '@/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
-  faXTwitter,
+  faTwitter,
   faTiktok,
-  faInstagram,
   faYoutube,
+  faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import { SOCIAL_LINKS } from '@/lib/constants';
+import { SOCIAL_LINKS } from '@/lib';
 
 export function Community() {
   const headingRef = useRef<HTMLDivElement | null>(null);
@@ -55,7 +55,7 @@ export function Community() {
         >
           <a href={SOCIAL_LINKS.TWITTER} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
-              icon={faXTwitter}
+              icon={faTwitter}
               className="text-[#00456E] transition-transform duration-200 group-hover:scale-110"
             />
             <span>X (Twitter)</span>

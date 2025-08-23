@@ -4,12 +4,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button, ThemeToggle, AuthModal } from '@/components';
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faRoute, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import ThemeToggle from '@/components/ui/theme-toggle';
-import { AuthModal } from '@/components/sections/auth-modal';
 
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);

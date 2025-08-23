@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { SCROLL, Z_INDEX } from '@/lib/constants';
+import { SCROLL, Z_INDEX } from '@/lib';
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
