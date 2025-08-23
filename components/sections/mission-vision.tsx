@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent } from '@/components';
+import { Card, CardContent } from '@/components/ui/card';
 
 export function MissionVision() {
   return (

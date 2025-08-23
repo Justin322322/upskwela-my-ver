@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useTheme } from 'next-themes';
 import { Sun, Moon, Laptop } from 'lucide-react';
-import { Button } from '@/components';
+import { Button } from '@/components/ui/button';
 
 function ThemeIcon({ theme }: { theme: string | undefined }) {
   if (theme === 'light') return <Sun className="h-4 w-4" />;

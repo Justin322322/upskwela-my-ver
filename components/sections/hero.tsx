@@ -1,7 +1,10 @@
 'use client';
 import { useRef } from 'react';
 import Link from 'next/link';
-import { Button, Badge, VariableProximity, Stats } from '@/components';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
+import { Stats } from '@/components/sections/stats';
 import { motion } from 'framer-motion';
 
 export function Hero() {

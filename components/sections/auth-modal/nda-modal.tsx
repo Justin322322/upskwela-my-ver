@@ -1,6 +1,7 @@
 'use client';
 
-import { Button, Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Printer, Download, X, Check } from 'lucide-react';
 
 interface NDAModalProps {
@@ -27,53 +28,53 @@ export function NDAModal({ isOpen, onOpenChange, onAccept }: NDAModalProps) {
       const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
       if (iframeDoc) {
         iframeDoc.open();
-        iframeDoc.write(`
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <title>Non-Disclosure Agreement - Upskwela</title>
-              <style>
-                body { 
-                  font-family: system-ui, -apple-system, sans-serif; 
-                  margin: 2rem; 
-                  line-height: 1.6; 
-                  color: #000;
-                  max-width: 65ch;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-                h1 { 
-                  color: #0ea5e9; 
-                  margin-bottom: 1rem; 
-                  font-size: 24px;
-                }
-                h3 { 
-                  color: #0ea5e9; 
-                  margin-top: 1.5rem; 
-                  margin-bottom: 0.5rem; 
-                  font-size: 18px;
-                }
-                ul { 
-                  margin-left: 1.5rem; 
-                  margin-bottom: 1rem;
-                }
-                li { margin-bottom: 0.25rem; }
-                p { margin-bottom: 1rem; }
-                a { color: #0b74c9; }
-                .bg-gray-50 { 
-                  background-color: #f9fafb; 
-                  padding: 1rem; 
-                  border-radius: 0.5rem; 
-                  border: 1px solid #e5e7eb;
-                }
-              </style>
-            </head>
-            <body>
-              <h1>Non-Disclosure Agreement - Upskwela</h1>
-              ${content.innerHTML}
-            </body>
-          </html>
-        `);
+        iframeDoc.write(
+          '<!DOCTYPE html>' +
+            '<html>' +
+            '<head>' +
+            '<title>Non-Disclosure Agreement - Upskwela</title>' +
+            '<style>' +
+            'body { ' +
+            'font-family: system-ui, -apple-system, sans-serif; ' +
+            'margin: 2rem; ' +
+            'line-height: 1.6; ' +
+            'color: #000;' +
+            'max-width: 65ch;' +
+            'margin-left: auto;' +
+            'margin-right: auto;' +
+            '}' +
+            'h1 { ' +
+            'color: #0ea5e9; ' +
+            'margin-bottom: 1rem; ' +
+            'font-size: 24px;' +
+            '}' +
+            'h3 { ' +
+            'color: #0ea5e9; ' +
+            'margin-top: 1.5rem; ' +
+            'margin-bottom: 0.5rem; ' +
+            'font-size: 18px;' +
+            '}' +
+            'ul { ' +
+            'margin-left: 1.5rem; ' +
+            'margin-bottom: 1rem;' +
+            '}' +
+            'li { margin-bottom: 0.25rem; }' +
+            'p { margin-bottom: 1rem; }' +
+            'a { color: #0b74c9; }' +
+            '.bg-gray-50 { ' +
+            'background-color: #f9fafb; ' +
+            'padding: 1rem; ' +
+            'border-radius: 0.5rem; ' +
+            'border: 1px solid #e5e7eb;' +
+            '}' +
+            '</style>' +
+            '</head>' +
+            '<body>' +
+            '<h1>Non-Disclosure Agreement - Upskwela</h1>' +
+            content.innerHTML +
+            '</body>' +
+            '</html>',
+        );
         iframeDoc.close();
 
         // Wait for content to load, then print

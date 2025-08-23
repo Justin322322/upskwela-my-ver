@@ -1,6 +1,10 @@
 'use client';
 
-import { SiteHeader, SiteFooter, Section, VariableProximity, Timeline } from '@/components';
+import { SiteHeader } from '@/components/layout/site-header';
+import { SiteFooter } from '@/components/layout/site-footer';
+import { Section } from '@/components/sections/section';
+import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
+import { Timeline } from '@/components/ui/timeline';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';

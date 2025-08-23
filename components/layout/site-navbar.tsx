@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HoveredLink, Menu, ThemeToggle, AuthModal } from '@/components';
+import { HoveredLink, Menu } from '@/components/ui/navbar-menu';
+import { default as ThemeToggle } from '@/components/ui/theme-toggle';
+import { AuthModal } from '@/components/sections/auth-modal/auth-modal';
 
 export default function SiteNavbar() {
   const [, setActive] = useState<string | null>(null);

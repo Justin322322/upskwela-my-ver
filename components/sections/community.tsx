@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '@/components';
+import { Button } from '@/components/ui/button';
 import { useRef } from 'react';
-import { VariableProximity } from '@/components';
+import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -11,7 +11,7 @@ import {
   faYoutube,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import { SOCIAL_LINKS } from '@/lib';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 export function Community() {
   const headingRef = useRef<HTMLDivElement | null>(null);
