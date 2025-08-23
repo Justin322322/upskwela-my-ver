@@ -1,37 +1,37 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🔍 Running pre-commit checks..."
+echo "Running pre-commit checks..."
 
 # Run TypeScript type checking
-echo "📝 Checking TypeScript types..."
+echo "Checking TypeScript types..."
 npx tsc --noEmit --project tsconfig.json
 if [ $? -ne 0 ]; then
-  echo "❌ TypeScript type checking failed. Please fix the type errors before committing."
+  echo "TypeScript type checking failed. Please fix the type errors before committing."
   exit 1
 fi
-echo "✅ TypeScript types are valid"
+echo "TypeScript types are valid"
 
 # Run ESLint
-echo "🔍 Running ESLint..."
+echo "Running ESLint..."
 npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0
 if [ $? -ne 0 ]; then
-  echo "❌ ESLint found errors. Please fix them before committing."
+  echo "ESLint found errors. Please fix them before committing."
   exit 1
 fi
-echo "✅ ESLint passed"
+echo "ESLint passed"
 
 # Check Prettier formatting
-echo "💅 Checking code formatting..."
+echo "Checking code formatting..."
 npx prettier --check .
 if [ $? -ne 0 ]; then
-  echo "❌ Code formatting check failed. Please run 'npm run format' to fix formatting issues."
+  echo "Code formatting check failed. Please run 'npm run format' to fix formatting issues."
   exit 1
 fi
-echo "✅ Code formatting is correct"
+echo "Code formatting is correct"
 
 # Run lint-staged for staged files
-echo "🚀 Running lint-staged on staged files..."
+echo "Running lint-staged on staged files..."
 npx --no-install lint-staged
 
-echo "🎉 All pre-commit checks passed!"
+echo "All pre-commit checks passed!"

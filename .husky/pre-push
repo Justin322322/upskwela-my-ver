@@ -1,42 +1,42 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🚀 Running pre-push checks..."
+echo "Running pre-push checks..."
 
 # Run TypeScript type checking
-echo "📝 Checking TypeScript types..."
+echo "Checking TypeScript types..."
 npx tsc --noEmit --project tsconfig.json
 if [ $? -ne 0 ]; then
-  echo "❌ TypeScript type checking failed. Please fix the type errors before pushing."
+  echo "TypeScript type checking failed. Please fix the type errors before pushing."
   exit 1
 fi
-echo "✅ TypeScript types are valid"
+echo "TypeScript types are valid"
 
 # Run ESLint
-echo "🔍 Running ESLint..."
+echo "Running ESLint..."
 npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0
 if [ $? -ne 0 ]; then
-  echo "❌ ESLint found errors. Please fix them before pushing."
+  echo "ESLint found errors. Please fix them before pushing."
   exit 1
 fi
-echo "✅ ESLint passed"
+echo "ESLint passed"
 
 # Check Prettier formatting
-echo "💅 Checking code formatting..."
+echo "Checking code formatting..."
 npx prettier --check .
 if [ $? -ne 0 ]; then
-  echo "❌ Code formatting check failed. Please run 'npm run format' to fix formatting issues."
+  echo "Code formatting check failed. Please run 'npm run format' to fix formatting issues."
   exit 1
 fi
-echo "✅ Code formatting is correct"
+echo "Code formatting is correct"
 
 # Build the project to ensure it compiles
-echo "🏗️ Building project..."
+echo "Building project..."
 npm run build
 if [ $? -ne 0 ]; then
-  echo "❌ Build failed. Please fix the build errors before pushing."
+  echo "Build failed. Please fix the build errors before pushing."
   exit 1
 fi
-echo "✅ Build successful"
+echo "Build successful"
 
-echo "🎉 All pre-push checks passed! Ready to push."
+echo "All pre-push checks passed! Ready to push."

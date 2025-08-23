@@ -11,7 +11,7 @@ conventional_pattern="^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|re
 
 # Check if commit message matches conventional format
 if ! echo "$commit_msg" | grep -qE "$conventional_pattern"; then
-  echo "❌ Invalid commit message format!"
+  echo "Invalid commit message format!"
   echo ""
   echo "Please use conventional commit format:"
   echo "  type(scope): description"
@@ -38,7 +38,7 @@ fi
 
 # Check if commit message is too long
 if [ ${#commit_msg} -gt 72 ]; then
-  echo "❌ Commit message is too long!"
+  echo "Commit message is too long!"
   echo "Current length: ${#commit_msg} characters"
   echo "Maximum allowed: 72 characters"
   echo ""
@@ -46,4 +46,4 @@ if [ ${#commit_msg} -gt 72 ]; then
   exit 1
 fi
 
-echo "✅ Commit message format is valid!"
+echo "Commit message format is valid!"

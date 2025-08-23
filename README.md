@@ -2,7 +2,7 @@
 
 A modern community-based learning platform built with Next.js 15, React 19, and TypeScript.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ npm run prepare
 npm run dev
 ```
 
-## 🔧 Development Scripts
+## Development Scripts
 
 ### Quality Assurance
 
@@ -69,7 +69,7 @@ npm run build
 npm run start
 ```
 
-## 🛡️ Code Quality & Git Hooks
+## Code Quality & Git Hooks
 
 This project uses **Husky** to enforce code quality standards before commits and pushes.
 
@@ -142,7 +142,7 @@ npm run lint:strict   # ESLint with no warnings
 npm run format:check  # Prettier formatting
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 upskwela/
@@ -159,7 +159,7 @@ upskwela/
 └── Configuration files    # TypeScript, ESLint, Prettier
 ```
 
-## 🎨 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript 5+
@@ -169,7 +169,7 @@ upskwela/
 - **Animations**: Framer Motion
 - **Code Quality**: ESLint 9, Prettier, Husky, lint-staged
 
-## 📝 Contributing
+## Contributing
 
 1. **Fork** the repository
 2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
@@ -193,7 +193,7 @@ If issues are found, fix them:
 npm run quality-fix
 ```
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Git Hooks Not Working
 
@@ -227,6 +227,6 @@ type(scope): description
 
 Example: `feat(auth): add user authentication`
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
