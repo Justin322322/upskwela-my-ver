@@ -1,5 +1,5 @@
 'use client';
-import CountUp from '@/components/animations/CountUp/CountUp';
+import { CountUp } from '@/components/animations';
 import { cn } from '@/lib/utils';
 
 type Stat = {

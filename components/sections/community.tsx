@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { useRef } from 'react';
-import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
+import { VariableProximity } from '@/components/animations';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -11,8 +11,9 @@ import {
   faInstagram,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
-function Community() {
+export function Community() {
   const headingRef = useRef<HTMLDivElement | null>(null);
   return (
     <div className="mx-auto max-w-6xl text-center">
@@ -39,7 +40,7 @@ function Community() {
           className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
-          <a href="https://www.facebook.com/upskwela" target="_blank" rel="noopener noreferrer">
+          <a href={SOCIAL_LINKS.FACEBOOK} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
               icon={faFacebook}
               className="text-[#00456E] transition-transform duration-200 group-hover:scale-110"
@@ -52,7 +53,7 @@ function Community() {
           className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
-          <a href="https://x.com/upskwela" target="_blank" rel="noopener noreferrer">
+          <a href={SOCIAL_LINKS.TWITTER} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
               icon={faXTwitter}
               className="text-[#00456E] transition-transform duration-200 group-hover:scale-110"
@@ -65,7 +66,7 @@ function Community() {
           className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
-          <a href="https://www.tiktok.com/@upskwela" target="_blank" rel="noopener noreferrer">
+          <a href={SOCIAL_LINKS.TIKTOK} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
               icon={faTiktok}
               className="text-[#00456E] transition-transform duration-200 group-hover:scale-110"
@@ -78,7 +79,7 @@ function Community() {
           className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base"
           asChild
         >
-          <a href="https://www.instagram.com/upskwela" target="_blank" rel="noopener noreferrer">
+          <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
               icon={faInstagram}
               className="text-[#00456E] transition-transform duration-200 group-hover:scale-110"
@@ -91,7 +92,7 @@ function Community() {
           className="group rounded-full h-11 sm:h-12 w-full sm:w-auto sm:min-w-[160px] px-3 sm:px-5 md:px-6 border-sky-200/70 bg-white/70 backdrop-blur text-[#00456E] hover:bg-white/95 hover:ring-1 hover:ring-sky-300/40 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 justify-center text-sm sm:text-base col-span-2 sm:col-span-1"
           asChild
         >
-          <a href="https://www.youtube.com/@upskwela" target="_blank" rel="noopener noreferrer">
+          <a href={SOCIAL_LINKS.YOUTUBE} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
               icon={faYoutube}
               className="text-[#00456E] transition-transform duration-200 group-hover:scale-110"
@@ -103,5 +104,3 @@ function Community() {
     </div>
   );
 }
-
-export default Community;

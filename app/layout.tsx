@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
-import LenisProvider from '@/components/providers/LenisProvider';
 import FontAwesomeSetup from '@/components/providers/FontAwesomeSetup';
 import ThemeProvider from '@/components/providers/ThemeProvider';
 import { Roboto_Flex, Inter } from 'next/font/google';
-import ScrollToTop from '@/components/animations/ScrollToTop';
+import { ScrollToTop } from '@/components/animations';
 
 const robotoFlex = Roboto_Flex({ subsets: ['latin'], variable: '--font-roboto-flex' });
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
@@ -16,6 +15,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: '/favicon.ico' }, { url: '/logo.svg', type: 'image/svg+xml' }],
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -32,7 +38,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="side-gradient-overlay" aria-hidden="true" />
           <FontAwesomeSetup />
-          <LenisProvider>{children}</LenisProvider>
+          {children}
           <ScrollToTop />
           <Toaster richColors />
         </ThemeProvider>

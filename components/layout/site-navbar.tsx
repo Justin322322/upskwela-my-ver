@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HoveredLink, Menu } from '@/components/ui/navbar-menu';
 import ThemeToggle from '@/components/ui/theme-toggle';
+import { AuthModal } from '@/components/sections/auth-modal';
+
 export default function SiteNavbar() {
   const [, setActive] = useState<string | null>(null);
   return (
@@ -30,8 +32,45 @@ export default function SiteNavbar() {
         <HoveredLink href="/">Home</HoveredLink>
         <HoveredLink href="/roadmap">Roadmap</HoveredLink>
         <span className="h-5 w-px bg-slate-300/30 dark:bg-slate-600/30 mx-1" aria-hidden="true" />
-        <HoveredLink href="/login">Login</HoveredLink>
-        <HoveredLink href="/signup">Sign up</HoveredLink>
+        <AuthModal
+          trigger={
+            <button className="group relative inline-flex items-center transition-all duration-300 px-3 py-2 rounded-lg font-medium text-base text-slate-700/80 hover:text-sky-700 dark:text-slate-300/80 dark:hover:text-sky-200">
+              <span className="relative z-10">Login</span>
+            </button>
+          }
+          onLogin={(email, password) => {
+            console.log('Login attempt:', { email, password });
+            // TODO: Implement actual login logic
+          }}
+          onSignup={(email, password, name) => {
+            console.log('Signup attempt:', { email, password, name });
+            // TODO: Implement actual signup logic
+          }}
+          onForgotPassword={(email) => {
+            console.log('Forgot password attempt:', { email });
+            // TODO: Implement actual password reset logic
+          }}
+        />
+        <AuthModal
+          trigger={
+            <button className="group relative inline-flex items-center transition-all duration-300 px-3 py-2 rounded-lg font-medium text-base text-slate-700/80 hover:text-sky-700 dark:text-slate-300/80 dark:hover:text-sky-200">
+              <span className="relative z-10">Sign up</span>
+            </button>
+          }
+          defaultMode="signup"
+          onLogin={(email, password) => {
+            console.log('Login attempt:', { email, password });
+            // TODO: Implement actual login logic
+          }}
+          onSignup={(email, password, name) => {
+            console.log('Signup attempt:', { email, password, name });
+            // TODO: Implement actual signup logic
+          }}
+          onForgotPassword={(email) => {
+            console.log('Forgot password attempt:', { email });
+            // TODO: Implement actual password reset logic
+          }}
+        />
         <div className="ml-2">
           <ThemeToggle />
         </div>

@@ -5,7 +5,7 @@ import { SiteFooter } from '@/components/layout/site-footer';
 import { Section } from '@/components/sections/section';
 import { useRef } from 'react';
 import { motion } from 'motion/react';
-import VariableProximity from '@/components/animations/VariableProximity/VariableProximity';
+import { VariableProximity } from '@/components/animations';
 import Image from 'next/image';
 import { Timeline } from '@/components/ui/timeline';
 

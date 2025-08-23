@@ -215,3 +215,197 @@
     linear-gradient(to left, rgba(10, 93, 168, 0), rgba(10, 93, 168, 0)) right / 140px 100%
       no-repeat;
 }
+
+/* Mobile-specific styles for auth modal */
+@media (max-width: 640px) {
+  /* Ensure modal content is properly sized on mobile */
+  [data-radix-dialog-content] {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+    overflow: hidden;
+    width: calc(100vw - 1rem) !important;
+    max-width: calc(100vw - 1rem) !important;
+  }
+
+  /* Improve touch targets on mobile */
+  button:not([data-slot='button']),
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Better spacing for mobile forms */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+
+  /* Ensure proper text sizing on mobile */
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  /* Better mobile input styling */
+  input[type='email'],
+  input[type='password'],
+  input[type='text'] {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Mobile-specific modal positioning */
+  [data-radix-dialog-content] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+
+  /* Mobile-optimized modal animations */
+  [data-radix-dialog-content] {
+    animation-duration: 150ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Better mobile modal backdrop */
+  [data-radix-dialog-overlay] {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Mobile-friendly form spacing */
+  .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+
+  /* Mobile-optimized button sizing */
+  button[type='submit'] {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 0.5rem;
+  }
+
+  /* Ensure theme toggle buttons maintain circular shape */
+  [data-slot='button'][class*='rounded-full'] {
+    border-radius: 9999px !important;
+    aspect-ratio: 1 !important;
+  }
+
+  /* Mobile modal content improvements */
+  [data-radix-dialog-content] > div {
+    padding: 1rem;
+  }
+
+  /* Better mobile input focus states */
+  input:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--ring));
+  }
+
+  /* NDA Modal mobile optimizations */
+  [data-radix-dialog-content] .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+
+  [data-radix-dialog-content] .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+
+  /* Mobile-friendly NDA content scrolling */
+  [data-radix-dialog-content] .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  /* Mobile-optimized NDA buttons */
+  [data-radix-dialog-content] button {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  /* Better mobile NDA spacing */
+  [data-radix-dialog-content] .space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+
+  /* Fix NDA modal scrolling issues */
+  [data-radix-dialog-content] .flex-1.min-h-0 {
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Ensure NDA content is scrollable */
+  [data-radix-dialog-content] #nda-content {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin;
+    max-height: none !important;
+  }
+
+  /* Mobile NDA layout fixes */
+  @media (max-width: 640px) {
+    [data-radix-dialog-content] .flex-col.h-full {
+      height: 100% !important;
+      max-height: 100% !important;
+    }
+
+    [data-radix-dialog-content] .flex-1 {
+      flex: 1 1 auto !important;
+      min-height: 0 !important;
+    }
+
+    [data-radix-dialog-content] .overflow-y-auto {
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+  }
+}
+
+/* Ensure modal overlay covers entire viewport on mobile */
+[data-radix-dialog-overlay] {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+/* Mobile-friendly dialog animations */
+@media (max-width: 640px) {
+  [data-radix-dialog-content] {
+    animation-duration: 200ms;
+  }
+}
+
+/* Additional mobile viewport fixes */
+@media (max-width: 640px) {
+  /* Prevent horizontal scrolling on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure modal doesn't cause viewport issues */
+  [data-radix-dialog-content] {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  /* Better mobile form spacing */
+  .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+
+  /* Mobile-friendly button sizing */
+  button[type='submit'] {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  /* Ensure theme toggle buttons maintain circular shape */
+  [data-slot='button'][class*='rounded-full'] {
+    border-radius: 9999px !important;
+    aspect-ratio: 1 !important;
+  }
+}

@@ -40,7 +40,7 @@ export default function ThemeToggle() {
         variant="brandOutline"
         size="icon"
         aria-label="Toggle theme"
-        className="rounded-full"
+        className="!rounded-full"
         disabled
       >
         <Laptop className="h-4 w-4" />
@@ -60,7 +60,7 @@ export default function ThemeToggle() {
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="rounded-full"
+        className="!rounded-full"
       >
         <ThemeIcon theme={visualTheme} />
       </Button>

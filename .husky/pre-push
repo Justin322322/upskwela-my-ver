@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🔍 Running pre-commit checks..."
+echo "🚀 Running pre-push checks..."
 
 # Run TypeScript type checking
 echo "📝 Checking TypeScript types..."
 npx tsc --noEmit --project tsconfig.json
 if [ $? -ne 0 ]; then
-  echo "❌ TypeScript type checking failed. Please fix the type errors before committing."
+  echo "❌ TypeScript type checking failed. Please fix the type errors before pushing."
   exit 1
 fi
 echo "✅ TypeScript types are valid"
@@ -16,7 +16,7 @@ echo "✅ TypeScript types are valid"
 echo "🔍 Running ESLint..."
 npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0
 if [ $? -ne 0 ]; then
-  echo "❌ ESLint found errors. Please fix them before committing."
+  echo "❌ ESLint found errors. Please fix them before pushing."
   exit 1
 fi
 echo "✅ ESLint passed"
@@ -30,8 +30,13 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ Code formatting is correct"
 
-# Run lint-staged for staged files
-echo "🚀 Running lint-staged on staged files..."
-npx --no-install lint-staged
+# Build the project to ensure it compiles
+echo "🏗️ Building project..."
+npm run build
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Please fix the build errors before pushing."
+  exit 1
+fi
+echo "✅ Build successful"
 
-echo "🎉 All pre-commit checks passed!"
+echo "🎉 All pre-push checks passed! Ready to push."

@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CheckCircle, ListTodo, CreditCard, MessageCircle, Trophy, Brain } from 'lucide-react';
-import VariableProximity from '../animations/VariableProximity/VariableProximity';
+import { VariableProximity } from '@/components/animations';
 
 interface TimelineEntry {
   title: string;
