@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import {
   Dialog,
@@ -14,9 +13,8 @@ import { LoginForm } from './login-form';
 import { SignupForm } from './signup-form';
 import { ForgotPasswordForm } from './forgot-password-form';
 import { NDAModal } from './nda-modal';
-import { AuthModalProps, AuthMode, AuthFormData, AuthErrors } from './types';
-import { validateEmail, validatePassword, validateName, validateConfirmPassword } from './utils';
-import React from 'react'; // Added missing import
+import { AuthModalProps } from './types';
+import { useAuthModal } from '@/components/hooks/useAuthModal';
 
 export function AuthModal({
   trigger,
@@ -28,133 +26,29 @@ export function AuthModal({
   onForgotPassword,
   className,
 }: AuthModalProps) {
-  const [mode, setMode] = useState<AuthMode>(defaultMode);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [ndaAccepted, setNdaAccepted] = useState(false);
-  const [ndaModalOpen, setNdaModalOpen] = useState(false);
-
-  // Use external control if provided, otherwise use internal state
-  const isControlled = open !== undefined;
-  const modalOpen = isControlled ? open : isOpen;
-  const setModalOpen = isControlled ? onOpenChange : setIsOpen;
-
-  // Form states
-  const [formData, setFormData] = useState<AuthFormData>({
-    email: '',
-    password: '',
-    name: '',
-    confirmPassword: '',
+  const {
+    mode,
+    modalOpen,
+    isLoading,
+    ndaAccepted,
+    ndaModalOpen,
+    formData,
+    errors,
+    handleModeChange,
+    handleOpenChange,
+    handleSubmit,
+    updateFormData,
+    acceptNDA,
+    openNDAModal,
+    closeNDAModal,
+  } = useAuthModal({
+    defaultMode,
+    open,
+    onOpenChange,
+    onLogin,
+    onSignup,
+    onForgotPassword,
   });
-
-  // Error states
-  const [errors, setErrors] = useState<AuthErrors>({});
-
-  const resetForm = () => {
-    setFormData({
-      email: '',
-      password: '',
-      name: '',
-      confirmPassword: '',
-    });
-    setErrors({});
-    setNdaAccepted(false);
-  };
-
-  const handleModeChange = (newMode: AuthMode) => {
-    setMode(newMode);
-    resetForm();
-  };
-
-  const handleOpenChange = (open: boolean) => {
-    if (setModalOpen) {
-      setModalOpen(open);
-    }
-    if (open) {
-      // Always reset to the default mode when opening
-      setMode(defaultMode);
-      resetForm();
-    }
-  };
-
-  // Reset mode when defaultMode changes (for external control)
-  React.useEffect(() => {
-    if (modalOpen) {
-      setMode(defaultMode);
-      resetForm();
-    }
-  }, [defaultMode, modalOpen]);
-
-  const validateForm = () => {
-    const newErrors: AuthErrors = {};
-
-    // Validate email
-    const emailError = validateEmail(formData.email);
-    if (emailError) newErrors.email = emailError;
-
-    // Validate password
-    const passwordError = validatePassword(formData.password, mode);
-    if (passwordError) newErrors.password = passwordError;
-
-    // Validate name for signup
-    if (mode === 'signup') {
-      const nameError = validateName(formData.name);
-      if (nameError) newErrors.name = nameError;
-
-      const confirmPasswordError = validateConfirmPassword(
-        formData.password,
-        formData.confirmPassword,
-      );
-      if (confirmPasswordError) newErrors.confirmPassword = confirmPasswordError;
-
-      if (!ndaAccepted) {
-        newErrors.nda = 'You must accept the Non-Disclosure Agreement to continue';
-      }
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
-    setIsLoading(true);
-    setErrors({});
-
-    try {
-      switch (mode) {
-        case 'login':
-          if (onLogin) {
-            await onLogin(formData.email, formData.password);
-          }
-          break;
-        case 'signup':
-          if (onSignup) {
-            await onSignup(formData.email, formData.password, formData.name);
-          }
-          break;
-        case 'forgot-password':
-          if (onForgotPassword) {
-            await onForgotPassword(formData.email);
-          }
-          break;
-      }
-
-      // Close modal on success
-      if (setModalOpen) {
-        setModalOpen(false);
-      }
-      resetForm();
-    } catch (error) {
-      console.error('Authentication error:', error);
-      setErrors({ general: 'An error occurred. Please try again.' });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const renderForm = () => {
     switch (mode) {
@@ -165,8 +59,8 @@ export function AuthModal({
             password={formData.password}
             isLoading={isLoading}
             errors={errors}
-            onEmailChange={(email) => setFormData((prev) => ({ ...prev, email }))}
-            onPasswordChange={(password) => setFormData((prev) => ({ ...prev, password }))}
+            onEmailChange={(email) => updateFormData('email', email)}
+            onPasswordChange={(password) => updateFormData('password', password)}
             onSubmit={handleSubmit}
             onModeChange={handleModeChange}
           />
@@ -182,16 +76,16 @@ export function AuthModal({
             isLoading={isLoading}
             errors={errors}
             ndaAccepted={ndaAccepted}
-            onEmailChange={(email) => setFormData((prev) => ({ ...prev, email }))}
-            onPasswordChange={(password) => setFormData((prev) => ({ ...prev, password }))}
-            onNameChange={(name) => setFormData((prev) => ({ ...prev, name }))}
+            onEmailChange={(email) => updateFormData('email', email)}
+            onPasswordChange={(password) => updateFormData('password', password)}
+            onNameChange={(name) => updateFormData('name', name)}
             onConfirmPasswordChange={(confirmPassword) =>
-              setFormData((prev) => ({ ...prev, confirmPassword }))
+              updateFormData('confirmPassword', confirmPassword)
             }
-            onNdaAcceptedChange={setNdaAccepted}
+            onNdaAcceptedChange={acceptNDA}
             onSubmit={handleSubmit}
             onModeChange={handleModeChange}
-            onNdaModalOpen={() => setNdaModalOpen(true)}
+            onNdaModalOpen={openNDAModal}
           />
         );
 
@@ -201,7 +95,7 @@ export function AuthModal({
             email={formData.email}
             isLoading={isLoading}
             errors={errors}
-            onEmailChange={(email) => setFormData((prev) => ({ ...prev, email }))}
+            onEmailChange={(email) => updateFormData('email', email)}
             onSubmit={handleSubmit}
             onModeChange={handleModeChange}
           />
@@ -242,7 +136,7 @@ export function AuthModal({
     <>
       <Dialog open={modalOpen} onOpenChange={handleOpenChange}>
         {/* Only render DialogTrigger when not externally controlled */}
-        {!isControlled && (
+        {open === undefined && (
           <DialogTrigger asChild>
             {trigger || (
               <Button variant="brand" className={className}>
@@ -278,14 +172,7 @@ export function AuthModal({
         </DialogContent>
       </Dialog>
 
-      <NDAModal
-        isOpen={ndaModalOpen}
-        onOpenChange={setNdaModalOpen}
-        onAccept={() => {
-          setNdaAccepted(true);
-          setNdaModalOpen(false);
-        }}
-      />
+      <NDAModal isOpen={ndaModalOpen} onOpenChange={closeNDAModal} onAccept={acceptNDA} />
     </>
   );
 }

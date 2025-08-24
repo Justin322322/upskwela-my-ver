@@ -21,9 +21,3 @@ export const SOCIAL_LINKS = {
   INSTAGRAM: 'https://www.instagram.com/upskwela',
   YOUTUBE: 'https://www.youtube.com/@upskwela',
 } as const;
-
-// Scroll constants
-export const SCROLL = {
-  TOP_THRESHOLD: 400,
-  SMOOTH_BEHAVIOR: 'smooth' as ScrollBehavior,
-} as const;

@@ -1,9 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { useTheme } from 'next-themes';
 import { Sun, Moon, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/components/hooks/useTheme';
 
 function ThemeIcon({ theme }: { theme: string | undefined }) {
   if (theme === 'light') return <Sun className="h-4 w-4" />;
@@ -12,15 +12,9 @@ function ThemeIcon({ theme }: { theme: string | undefined }) {
 }
 
 export default function ThemeToggle() {
-  const { theme, setTheme, systemTheme, resolvedTheme } = useTheme();
+  const { theme, currentTheme, mounted, setLightTheme, setDarkTheme, setSystemTheme } = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [mounted, setMounted] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement | null>(null);
-
-  // Prevent hydration mismatch by only rendering after mount
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
 
   React.useEffect(() => {
     function onClickOutside(e: MouseEvent) {
@@ -49,7 +43,7 @@ export default function ThemeToggle() {
   }
 
   const current = theme ?? 'system';
-  const visualTheme = current === 'system' ? (resolvedTheme ?? systemTheme) : current;
+  const visualTheme = currentTheme;
 
   return (
     <div className="relative" ref={menuRef}>
@@ -75,7 +69,7 @@ export default function ThemeToggle() {
             label="Light"
             active={current === 'light'}
             onSelect={() => {
-              setTheme('light');
+              setLightTheme();
               setOpen(false);
             }}
           />
@@ -84,7 +78,7 @@ export default function ThemeToggle() {
             label="Dark"
             active={current === 'dark'}
             onSelect={() => {
-              setTheme('dark');
+              setDarkTheme();
               setOpen(false);
             }}
           />
@@ -93,7 +87,7 @@ export default function ThemeToggle() {
             label="System"
             active={current === 'system'}
             onSelect={() => {
-              setTheme('system');
+              setSystemTheme();
               setOpen(false);
             }}
           />

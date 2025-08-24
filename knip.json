@@ -2,6 +2,7 @@
   "$schema": "https://unpkg.com/knip/schema.json",
   "ignoreDependencies": ["eslint-config-next", "eslint-config-prettier", "tailwindcss"],
   "rules": {
-    "binaries": "off"
+    "binaries": "off",
+    "files": "off"
   }
 }
